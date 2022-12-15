@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en" ng-app="ComprobadorComida">
+  <head>
+    <title>Lunch Checker</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles/bootstrap.min.css">
+    <script src="js/angular.min.js"></script>
+    <script src="js/app.js"></script>
+    <style>
+      .message { font-size: 1.3em; font-weight: bold; }
+    </style>
+  </head>
+<body ng-controller="ComporbadorControler">
+   <div class="container" >
+    <h1>Comprobador de almuerzo</h1>
+         <div class="form-group">
+             <input id="lunch-menu" type="text"
+             placeholder="enumere los platos separados por comas que suele almorzar"
+             class="form-control"
+             ng-model="lista">
+         </div>
+
+
+
+         <div class="form-group">
+             <button ng-click="Comprobador()" class="btn btn-default">Comprobando si es demaciado</button>
+         </div>
+         <div class="form-group message text-muted" >
+         {{Mensaje}}
+         </div>
+   </div>
+
+</body>
+</html>
