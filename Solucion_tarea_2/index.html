@@ -27,7 +27,7 @@
     <div class="col-md-6" ng-controller='AlreadyBoughtController as itemAdder'>
      <h2>Ya comprado:</h2>
      <ul>
-       <li ng-repeat="item in itemAdder.item2">{{$index + 1 }}. Comprar {{item.quantity}} {{item.name}}(s)</li>
+       <li ng-repeat="item in itemAdder.item2">{{$index + 1 }}. comprados {{item.quantity}} {{item.name}}(s)</li>
      </ul>
      <div ng-if="itemAdder.item2 == 0 "  class="emptyMessage">Nada comprado todavía.</div>
     </div>
