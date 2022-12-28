@@ -1,0 +1,38 @@
+<!doctype html>
+<html  ng-app="ListaDeTienda" lang="en">
+  <head>
+    <title>Lista de compras</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles/bootstrap.min.css">
+    <link rel="stylesheet" href="styles/miestilo.css">
+    <script src="js/angular.min.js"></script>
+    <script src="js/app.js"></script>
+  </head>
+<body>
+  <div class="container">
+  <h1>listas de compras</h1>
+
+  <div class="row">
+
+    <!-- To Buy List -->
+    <div class="col-md-6" ng-controller='ToBuyControllery as showlist'>
+     <h2>Comprar:</h2>
+     <ul>
+            <li ng-repeat="item in showlist.items" >{{$index + 1 }}. Comprar {{item.quantity}} {{item.name}}(s)
+            <button ng-click="showlist.removeItem($index)" class="btn btn-default "><span class="glyphicon glyphicon-ok"></span> Comprado</button></li>
+     </ul>
+     <div ng-if="showlist.items <= 0 " class="emptyMessage">¡Todo está comprado!</div>
+    </div>
+    <!-- Already Bought List -->
+    <div class="col-md-6" ng-controller='AlreadyBoughtController as itemAdder'>
+     <h2>Ya comprado:</h2>
+     <ul>
+       <li ng-repeat="item in itemAdder.item2">{{$index + 1 }}. Comprar {{item.quantity}} {{item.name}}(s)</li>
+     </ul>
+     <div ng-if="itemAdder.item2 == 0 "  class="emptyMessage">Nada comprado todavía.</div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
