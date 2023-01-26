@@ -1,0 +1,19 @@
+
+<div class="rows">
+   
+    <div class="card cols=50" style="width: 51rem;" ng-repeat="item in menu.foundItems">
+        <div class="card-body"   ng-if="$index % 2 == 0"></div>
+        <div class="col-md-6">
+            
+            
+            <div class="card-text">
+                <h2>{{item.name}}</h2>
+                <h3>{{item.short_name}}</h3>
+                <p>{{item.description}}</p>
+                <input type="button" ng-click="menu.onRemove({index: $index})" class="btn btn-danger" value="No quiero este menu!">
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="alert alert-danger" role="alert" ng-show="menu.onEmpty">{{menu.onEmpty}}</div>

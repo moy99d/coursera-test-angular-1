@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="NarrowItDownApp">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Reduzca su elección de menú chino</title>
+    <link rel="stylesheet" href="styles/bootstrap.min.css">
+    <link rel="stylesheet" href="styles/styles.css">
+    <script src="js/angular.min.js"></script>
+    <script src="js/app.js"></script>
+</head>
+
+<body>
+    <div class="container" ng-controller="NarrowItDownController as menu">
+        <h1>Reduzca su elección de menú chino</h1>
+        <div class="search">
+            <input type="text" placeholder="Buscar" class="form-control" ng-model="menu.shortName">
+            <div class="narrow-button">
+                <button class="btn btn-danger" ng-click="menu.matchedMenuItems(menu.shortName)">Retringirlo para mi !</button>
+            </div>
+        </div>
+        <found-items found-items="menu.found" on-remove="menu.removeMenuItem(index)" on-empty="menu.message"></found-items>
+    </div>
+</body>
+
+</html>
